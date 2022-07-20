@@ -1,3 +1,4 @@
+//The RallyBot Class
 class RallyBot {
   #maxCurrentSpeed=0;
   #coords=Vector(0,0);
