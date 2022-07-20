@@ -1,3 +1,4 @@
+//The RallyBot Class
 class RallyBot {
   #maxCurrentSpeed=0;
   #coords=Vector(0,0);
@@ -43,26 +44,41 @@ class Frame {
   }
 }
 class ModuleSlot {
-  #chanells=[];
+  //This is a 2 Dimensional Array, every channel is 1 Dimensional Array
+  #channels=[];
   #module;
-  constructor(chanells,strength) {
-    this.#chanells=chanells;
+  constructor(channels,strength,maxTransportableEnergy) {
+    this.#channels=channels;
     this.strength=strength;
+    this.maxTransportableEnergy=maxTransportableEnergy;
   }
   connectModule(module){
-    if (this.strength>module.weight) {
+    //If Strength is 5 and weight is 10 then this won't work
+    if (this.strength > module.weight&&this.maxTransportableEnergy>=module.needingEnergy) {
       this.#module=module;
     }
   }
+  useModule(callName,...args){
+    let currChannel=this.#channels.findIndex(c=>c.name===callName);
+    if (this.#channels[currChannel].inCount>=args.length) {
+      this.#module.do(currChannel,...args);
+    }else {
+      alert("too many args");
+    }
+  }
 }
-class Module {
-  constructor(name, needingEnergy, works, weight) {
+
+class Module
+{
+  constructor(name, needingEnergy, works, weight)
+  {
     this.name = name;
     this.needingEnergy = needingEnergy;
     this.works = works;
     this.weight = weight;
   }
-  process(idx, ...args) {
+  do(idx, ...args)
+  {
     this.works[idx](...args);
   }
 }
