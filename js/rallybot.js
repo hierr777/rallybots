@@ -59,16 +59,16 @@ class ModuleSlot {
 
 class RandomObject //Don't know what to name it 
 {
-  constructor(name, needingEnergy, work, weight)
+  constructor(name, needingEnergy, works, weight)
   {
     this.name = name;
     this.needingEnergy = needingEnergy;
-    this.work = work;
+    this.works = works;
     this.weight = weight;
   }
   
   function process(...args)
   {
-    this.work = (...args)
+    this.works = (...args)
   }
 }
