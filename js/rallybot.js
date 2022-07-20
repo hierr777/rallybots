@@ -57,7 +57,7 @@ class ModuleSlot {
 }
 
 
-class RandomObject //Don't know what to name it 
+class Module 
 {
   constructor(name, needingEnergy, works, weight)
   {
@@ -67,7 +67,7 @@ class RandomObject //Don't know what to name it
     this.weight = weight;
   }
   
-  function process(...args)
+  function process(idx, ...args)
   {
     this.works = (...args)
   }
