@@ -55,3 +55,14 @@ class ModuleSlot {
     }
   }
 }
+class Module {
+  constructor(name, needingEnergy, works, weight) {
+    this.name = name;
+    this.needingEnergy = needingEnergy;
+    this.works = works;
+    this.weight = weight;
+  }
+  process(idx, ...args) {
+    this.works[idx](...args);
+  }
+}
