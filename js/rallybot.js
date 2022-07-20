@@ -44,11 +44,11 @@ class Frame {
   }
 }
 class ModuleSlot {
-  //This is a 2 Dimensional Array
-  #chanells=[];
+  //This is a 2 Dimensional Array, every channel is 1 Dimensional
+  #channels=[];
   #module;
-  constructor(chanells,strength) {
-    this.#chanells=chanells;
+  constructor(channels,strength) {
+    this.#channels=channels;
     this.strength=strength;
   }
   connectModule(module){
