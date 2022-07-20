@@ -1,11 +1,12 @@
 class Loop {
-  constructor(name,loop,onstart,onend,onpause){
+  #paused=false;
+  constructor(name,loop,onstart=()=>{},onend=()=>{},onpause=()=>{}){
     this.name=name;
     this.loop=loop;
     this.onstart=onstart;
     this.onend=onend;
     this.onpause=onpause;
-    this.paused=false;
+    this.#paused=false;
   }
   start(orientedTPS){
     this.onstart();
@@ -22,6 +23,6 @@ class Loop {
   }
   pause(){
     this.onpaused();
-    this.paused=!this.paused;
+    this.#paused=!this.#paused;
   }
 }
