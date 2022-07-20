@@ -67,7 +67,7 @@ class Module
     this.weight = weight;
   }
   
-  function process(idx, ...args)
+  process(idx, ...args)
   {
     this.works[idx](...args)
   }
