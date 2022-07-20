@@ -69,6 +69,6 @@ class Module
   
   process(idx, ...args)
   {
-    this.works[idx](...args)
+    this.works[idx](...args);
   }
 }
