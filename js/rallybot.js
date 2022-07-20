@@ -43,6 +43,7 @@ class Frame {
   }
 }
 class ModuleSlot {
+  //This is a 2 Dimensional Array
   #chanells=[];
   #module;
   constructor(chanells,strength) {
@@ -50,7 +51,8 @@ class ModuleSlot {
     this.strength=strength;
   }
   connectModule(module){
-    if (this.strength>module.weight) {
+    //If Strength is 5 and weight is 10 then this won't work
+    if (this.strength > module.weight) {
       this.#module=module;
     }
   }
