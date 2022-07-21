@@ -3,9 +3,9 @@
   position: relative;
   overflow: hidden;
   width: 100px;
-  height: 100px;
+  height: 200px;
   background: transparent;
-  font-size: 100%;
+  font-size: 10px;
   -webkit-transition: all 0.1s 0s linear;
   -moz-transition: all 0.1s 0s linear;
   -o-transition: all 0.1s 0s linear;

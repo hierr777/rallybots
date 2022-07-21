@@ -35,6 +35,7 @@ const Vector=(x,y,z=0)=>{
   }
   return new vector(x,y,z);
 }
+var _GRAVITY_=10;
 
 var min=(value,minimum)=>value < minimum ? minimum : value;
 var max=(value,maximum)=>value > maximum ? maximum : value;
