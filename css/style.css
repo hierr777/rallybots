@@ -1,8 +1,11 @@
 .rallybot{
-  width:100px;
-  height:100px;
-  background: blue;
-  position: absolute;
+  perspective: 800px;
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  font-size: 100%;
   -webkit-transition: all 0.1s 0s linear;
   -moz-transition: all 0.1s 0s linear;
   -o-transition: all 0.1s 0s linear;
