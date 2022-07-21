@@ -54,8 +54,11 @@ class ModuleSlot {
   }
   connectModule(module){
     //If Strength is 5 and weight is 10 then this won't work
-    if (this.strength > module.weight&&this.maxTransportableEnergy>=module.needingEnergy) {
+    //if needing energy larger than can be gived this won`t work
+    if (this.strength>=module.weight&&this.maxTransportableEnergy>=module.needingEnergy) {
       this.#module=module;
+    }else {
+      alert('wtf u doing, DONT DO THIS!!!!! THIS DONT WORK!!!!!!!!!!');
     }
   }
   useModule(callName,...args){
