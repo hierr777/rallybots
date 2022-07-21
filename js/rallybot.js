@@ -73,12 +73,13 @@ class ModuleSlot {
 
 class Module
 {
-  constructor(name, needingEnergy, works, weight)
+  constructor(name, needingEnergy, works, weight,html)
   {
     this.name = name;
     this.needingEnergy = needingEnergy;
     this.works = works;
     this.weight = weight;
+    this.html=html;
   }
   do(idx, ...args)
   {
