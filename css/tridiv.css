@@ -57,3 +57,40 @@
 .cr, .cr .side {
   height: 100%;
 }
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+[class*="cylinder"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cylinder"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cylinder"] .tp, [class*="cylinder"] .bm, [class*="cylinder"] .tp .photon-shader, [class*="cylinder"] .bm .photon-shader {
+  border-radius: 50%;
+}
+[class*="cylinder"] .bm {
+  top: 100%;
+}
