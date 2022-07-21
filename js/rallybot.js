@@ -986,6 +986,7 @@ var baseFrameHtml=(modules)=>`
     </div>
   </div>
 </div>*/
+
 //The RallyBot Class
 class RallyBot {
   #maxCurrentSpeed=0;
@@ -1012,6 +1013,13 @@ class RallyBot {
     this.legRightModule=legRightModule;
     this.backModule=backModule;
     this.frame.connectModules(this.armLeftModule,this.armRightModule,this.legLeftModule,this.legRightModule,this.backModule);
+  }
+  move(movement = Vector(x,y,z), map())
+  {
+    if(map())
+    {
+      this.#chords = -movement;
+    }
   }
 }
 class Frame {
