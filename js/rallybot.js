@@ -1,5 +1,6 @@
 var baseFrameHtml=`
-<div id="tridiv">
+<div class="rallybotPoser">
+<div class="rallybot">
   <div class="scene">
     <div class="shape cuboid-1 body1">
       <div class="face ft"></div>
@@ -490,6 +491,7 @@ var baseFrameHtml=`
       <div class="face tp"></div>
     </div>
   </div>
+</div>
 </div>
 `;
 //The RallyBot Class
