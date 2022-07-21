@@ -1014,11 +1014,15 @@ class RallyBot {
     this.backModule=backModule;
     this.frame.connectModules(this.armLeftModule,this.armRightModule,this.legLeftModule,this.legRightModule,this.backModule);
   }
-  move(movement = Vector(x,y,z), map())
+  move(direction = Vector(x,y,z), map())
   {
     if(map())
     {
-      this.#chords = -movement;
+      this.#chords -= direction;
+    }
+    else
+    {
+      this.#chords += direction;
     }
   }
 }
