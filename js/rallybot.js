@@ -30,7 +30,7 @@ class RallyBot {
     console.log(this.#coords);
     this.#coords=this.#coords.sum(direction);
     console.log(this.#coords);
-    if(map(this.#coords))
+    if(map(this.#coords,direction))
     {
       this.#coords=this.#coords.sum(direction.negative);
     }
