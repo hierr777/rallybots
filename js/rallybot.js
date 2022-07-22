@@ -30,6 +30,9 @@ class RallyBot {
   }
   move(direction, map)
   {
+    if (this.energy<=0) {
+      return false;
+    }
     console.log(this.#coords);
     this.#coords=this.#coords.sum(direction);
     console.log(this.#coords);
@@ -40,17 +43,18 @@ class RallyBot {
     console.log(this.#coords);
     getElement(`#${this.name}`).style.left=this.#coords.x+"px";
     getElement(`#${this.name}`).style.bottom=this.#coords.y+"px";
+    return true;
   }
   get coords(){
-    return this.#coords
+    return this.#coords;
   }
-  
-  attack(health)
+
+  attack(target)
   {
-    if(rectangleCollision2D().collided)
+    if(rectangleCollision2D())
     {
-      health -= (this.hit -= this.armor/2);
-      this.armor -= this.hit;
+      target.health -= (this.hit -= target.armor/2);
+      target.armor -= this.hit;
     }
   }
 }
