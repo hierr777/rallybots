@@ -2,12 +2,15 @@
 class RallyBot {
   #maxCurrentSpeed=0;
   #coords=Vector(0,0);
-  constructor(name,energy,maxSpeed,frame,moduleSlot) {
+  constructor(name,energy,maxSpeed,frame,moduleSlot, health, armor, hit) {
     this.name=name;
     this.energy=energy;
     this.maxSpeed=maxSpeed;
     this.#maxCurrentSpeed=maxSpeed;
     this.frame=frame;
+    this.health = health;
+    this.armor = armor;
+    this.hit = hit;
   }
   constructIn(el,coords){
     this.#coords=coords;
@@ -40,6 +43,15 @@ class RallyBot {
   }
   get coords(){
     return this.#coords
+  }
+  
+  attack(health)
+  {
+    if(rectangleCollision2D().collided)
+    {
+      health -= (this.hit -= this.armor/2);
+      this.armor -= this.hit;
+    }
   }
 }
 class Frame {
