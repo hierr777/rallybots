@@ -27,11 +27,19 @@ class RallyBot {
   }
   move(direction, map)
   {
-    this.#coords.sum(direction);
+    console.log(this.#coords);
+    this.#coords=this.#coords.sum(direction);
+    console.log(this.#coords);
     if(map(this.#coords))
     {
-      this.#coords.sum(direction.negative);
+      this.#coords=this.#coords.sum(direction.negative);
     }
+    console.log(this.#coords);
+    getElement(`#${this.name}`).style.left=this.#coords.x+"px";
+    getElement(`#${this.name}`).style.bottom=this.#coords.y+"px";
+  }
+  get coords(){
+    return this.#coords
   }
 }
 class Frame {
